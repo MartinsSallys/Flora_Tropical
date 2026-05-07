@@ -1,0 +1,15 @@
+{
+  "name": "headshop-site",
+  "version": "1.0.0",
+  "description": "Site estático de head shop premium usando HTML, CSS e JavaScript puro.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
