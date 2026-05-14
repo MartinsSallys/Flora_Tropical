@@ -1,121 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  /* HERO SLIDER */
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  const slides = document.querySelectorAll('[data-slide]');
-  const dots = document.querySelectorAll('[data-dot]');
-  let activeSlide = 0;
-  let slideInterval;
+import { products } from "../data/products.js";
+import { categories } from "../data/categories.js";
+import { renderProductCard } from "../components/productCard.js";
+import { renderCategoryCard } from "../components/categoryCard.js";
 
-  function showSlide(index) {
-    slides.forEach((slide, slideIndex) => {
-      slide.classList.toggle('is-active', slideIndex === index);
+const productGrid = document.querySelector("#product-grid");
+const categoryGrid = document.querySelector("#category-grid");
+const filterBar = document.querySelector("#product-filters");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+const categoriesForFilter = ["Todos", ...new Set(products.map((product) => product.category))];
+
+function renderProducts(category = "Todos") {
+  const filteredProducts = category === "Todos"
+    ? products
+    : products.filter((product) => product.category === category);
+
+  productGrid.innerHTML = filteredProducts.map(renderProductCard).join("");
+}
+
+function renderFilters() {
+  filterBar.innerHTML = categoriesForFilter.map((category, index) => `
+    <button class="filter-button ${index === 0 ? "is-active" : ""}" type="button" data-category="${category}">
+      ${category}
+    </button>
+  `).join("");
+
+  filterBar.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-category]");
+    if (!button) return;
+
+    document.querySelectorAll(".filter-button").forEach((item) => {
+      item.classList.toggle("is-active", item === button);
     });
 
-    dots.forEach((dot, dotIndex) => {
-      dot.classList.toggle('is-active', dotIndex === index);
-    });
-  }
+    renderProducts(button.dataset.category);
+  });
+}
 
-  function autoPlaySlides() {
-    slideInterval = setInterval(() => {
-      activeSlide = (activeSlide + 1) % slides.length;
-      showSlide(activeSlide);
-    }, 5200);
-  }
+function renderCategories() {
+  categoryGrid.innerHTML = categories.map(renderCategoryCard).join("");
+}
 
-  if (dots.length && slides.length) {
-    // Click handlers for dots
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        activeSlide = index;
-        showSlide(activeSlide);
-        
-        // Reset autoplay when manually clicking
-        clearInterval(slideInterval);
-        autoPlaySlides();
-      });
-    });
+function setupMobileMenu() {
+  if (!menuToggle || !navLinks) return;
 
-    // Start autoplay
-    autoPlaySlides();
-  }
-
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  /* MOBILE MENU */
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (menuToggle && navLinks) {
-    // Toggle menu
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navLinks.classList.toggle('active');
-      updateMenuIcon();
-    });
-
-    // Close menu when clicking nav link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        updateMenuIcon();
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.navbar')) {
-        navLinks.classList.remove('active');
-        updateMenuIcon();
-      }
-    });
-
-    // Update menu icon based on state
-    function updateMenuIcon() {
-      const isActive = navLinks.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isActive);
-    }
-  }
-
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  /* SMOOTH SCROLL FOR ANCHOR LINKS */
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href !== '#' && document.querySelector(href)) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        
-        // Close menu if open
-        if (navLinks) {
-          navLinks.classList.remove('active');
-        }
-      }
-    });
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  /* INTERSECTION OBSERVER FOR ANIMATIONS */
-  /* ═══════════════════════════════════════════════════════════════════════ */
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
-  }, observerOptions);
-
-  // Observe elements with fadeUp class
-  document.querySelectorAll('.reveal, .fade-in').forEach(el => {
-    observer.observe(el);
   });
-});
+}
+
+renderFilters();
+renderProducts();
+renderCategories();
+setupMobileMenu();

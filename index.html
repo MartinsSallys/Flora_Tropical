@@ -3,312 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Flora Tropical | Head shop premium e lifestyle tropical em Barra Grande e Parnaíba. Curadoria, produtos selecionados e experiência acolhedora." />
-  <title>Flora Tropical | Head Shop Premium</title>
+  <meta name="description" content="Flora Tropical é uma tabacaria premium com curadoria de produtos, acessórios e experiências exclusivas. Tradição, qualidade e exclusividade em cada experiência." />
+  <meta name="keywords" content="Flora Tropical, tabacaria premium, sedas, acessórios, charutos, tabacos, produtos premium" />
+  <meta property="og:title" content="Flora Tropical | Tabacaria Premium" />
+  <meta property="og:description" content="Tradição, Qualidade e Exclusividade em Cada Experiência." />
+  <meta property="og:image" content="images/espaço fisico.jpg" />
+  <title>Flora Tropical | Tabacaria Premium</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/global.css" />
-  <link rel="stylesheet" href="css/icons.css" />
-  <link rel="stylesheet" href="css/animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
 </head>
 <body>
   <div class="page">
-    <div class="topbar">18+ | Flora Tropical | Head shop premium com alma tropical.</div>
-
     <header class="navbar" aria-label="Navegação principal">
-      <a class="brand" href="#home">
-        <span class="brand-mark">FT</span>
+      <a class="brand" href="#inicio" aria-label="Flora Tropical">
+        <img class="brand-logo" src="images/logo.jpg" alt="Logo Flora Tropical" />
         <span class="brand-copy">
           <span class="brand-name">Flora Tropical</span>
-          <span class="brand-subtitle">Head shop lifestyle</span>
+          <span class="brand-subtitle">Tabacaria Premium</span>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Categorias">
-        <a href="#home">Home</a>
-        <a href="#marcas">Marcas</a>
+      <nav class="nav-links" aria-label="Links principais">
+        <a href="#inicio">Início</a>
         <a href="#produtos">Produtos</a>
-        <a href="#promo">Ofertas</a>
-        <a href="#eventos">Eventos</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
       </nav>
 
       <div class="nav-actions">
-        <button class="icon-button" type="button" aria-label="Abrir carrinho">
-          <svg class="icon-md" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="8" cy="21" r="1"></circle>
-            <circle cx="19" cy="21" r="1"></circle>
-            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h8.96a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-          </svg>
+        <a class="button button-nav" href="#newsletter">Clube VIP</a>
+        <button class="icon-button icon-badge" type="button" data-count="3" aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h8.96a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
         </button>
         <button class="menu-toggle icon-button" type="button" aria-label="Abrir menu" aria-expanded="false">
-          <svg class="icon-md" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 6h16" />
-            <path d="M4 12h16" />
-            <path d="M4 18h16" />
-          </svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
         </button>
       </div>
     </header>
 
     <main>
-      <section id="home" class="hero">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="hero-eyebrow">Lifestyle tropical premium</span>
-            <h1 class="hero-title">Flora Tropical: curadoria de produtos e experiências com identidade premium.</h1>
-            <p class="hero-description">Do ambiente à vitrine, cada detalhe foi pensado para oferecer uma jornada elegante, moderna e acolhedora em Barra Grande e Parnaíba.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#produtos">Ver catálogo</a>
-              <a class="button button-secondary" href="#marcas">Conhecer marcas</a>
-            </div>
-          </div>
-
-          <div class="hero-slider">
-            <article class="slide is-active" data-slide style="background-image: url('/images/Flora_bg.jpg');">
-              <span class="slide-brand">Seleção premium</span>
-              <h3>Marcas com presença, estilo e autenticidade tropical.</h3>
-              <p>A Flora Tropical reúne sedas, acessórios e glassware com identidade tropical e acabamento premium.</p>
-            </article>
-
-            <article class="slide" data-slide style="background-image: url('/images/bob.jpg');">
-              <span class="slide-brand">Conforto visual</span>
-              <h3>Design leve e acolhedor para quem valoriza qualidade.</h3>
-              <p>Experiência de compra pensada para apresentar produtos com clareza, frescor e organização visual.</p>
-            </article>
-
-            <article class="slide" data-slide style="background-image: url('/images/2025-07-11.jpg');">
-              <span class="slide-brand">Identidade artesanal</span>
-              <h3>Atmosfera tropical em cada escolha de produto.</h3>
-              <p>Do display à imagem de marca, Flora Tropical transmite natureza, elegância e energia urbana.</p>
-            </article>
-
-            <div class="slider-controls" aria-label="Controles do slider">
-              <button class="dot is-active" type="button" data-dot></button>
-              <button class="dot" type="button" data-dot></button>
-              <button class="dot" type="button" data-dot></button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="marcas" class="section">
-        <div class="section-inner">
-          <div class="section-header">
-            <span class="section-kicker">Marcas em destaque</span>
-            <h2>Parceiros que refletem o estilo Flora Tropical.</h2>
-            <p class="section-copy">Curadoria de marcas nacionais e internacionais para composições atraentes, confiáveis e sofisticadas.</p>
-          </div>
-
-          <div class="brand-grid">
-            <article class="brand-card">
-              <div class="brand-card-image" style="background-image: url('/images/sedas.jpg');"></div>
-              <div class="brand-card-body">
-                <h3>Bem Bolado</h3>
-                <p>Identidade brasileira e produto pensado para vitrines elegantes e reposição constante.</p>
-              </div>
-            </article>
-
-            <article class="brand-card">
-              <div class="brand-card-image" style="background-image: url('/images/camisas.jpg');"></div>
-              <div class="brand-card-body">
-                <h3>Smoking</h3>
-                <p>Referência clássica para clientes exigentes que buscam apresentação e confiança.</p>
-              </div>
-            </article>
-
-            <article class="brand-card">
-              <div class="brand-card-image" style="background-image: url('/images/produto_2.jpg');"></div>
-              <div class="brand-card-body">
-                <h3>RAW</h3>
-                <p>Alta percepção de valor com produto premium e apelo internacional.</p>
-              </div>
-            </article>
+      <section id="inicio" class="hero">
+        <img class="hero-image" src="images/espaço fisico.jpg" alt="Ambiente premium da Flora Tropical" />
+        <div class="hero-overlay"></div>
+        <div class="container hero-content animate-slide-in">
+          <span class="eyebrow">Tradição, Qualidade e Exclusividade em Cada Experiência</span>
+          <h1>Tabacaria premium com curadoria refinada.</h1>
+          <p>Uma seleção cuidadosa de produtos, acessórios e marcas para quem valoriza atendimento, ambiente e qualidade em cada detalhe.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#produtos">Explorar produtos</a>
+            <a class="button button-secondary light" href="#sobre">Saiba mais</a>
           </div>
         </div>
       </section>
 
       <section id="produtos" class="section">
-        <div class="section-inner">
-          <div class="section-header">
-            <span class="section-kicker">Produtos em destaque</span>
-            <h2>Catálogo com preços transparentes e visual organizado.</h2>
-            <p class="section-copy">Cada produto apresenta preço, categoria e estilo, com um layout leve e sofisticado para compras seguras.</p>
+        <div class="container section-header animate-fade-in">
+          <span class="section-kicker">Produtos premium</span>
+          <h2>Seleção exclusiva com preços transparentes.</h2>
+          <p>Cards padronizados, hierarquia clara e CTAs consistentes para uma experiência de compra profissional.</p>
+        </div>
+
+        <div class="container filter-bar" id="product-filters" aria-label="Filtros de produtos"></div>
+        <div class="container product-grid" id="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="categorias" class="section section-alt">
+        <div class="container section-header animate-fade-in">
+          <span class="section-kicker">Categorias</span>
+          <h2>Organização pensada para compra recorrente.</h2>
+          <p>Departamentos claros para facilitar navegação, comparação e descoberta de itens premium.</p>
+        </div>
+
+        <div class="container category-grid" id="category-grid"></div>
+      </section>
+
+      <section id="sobre" class="section about-section">
+        <div class="container about-grid">
+          <div class="about-media animate-slide-in">
+            <img src="images/Flora_bg.jpg" alt="Detalhes do ambiente Flora Tropical" />
           </div>
-
-          <div class="category-bar" aria-label="Categorias de produtos">
-            <span class="category-pill active">Destaques</span>
-            <span class="category-pill">Sedas</span>
-            <span class="category-pill">Dichavadores</span>
-            <span class="category-pill">Glassware</span>
-            <span class="category-pill">Acessórios</span>
-          </div>
-
-          <div class="product-grid">
-            <article class="product-card">
-              <div class="product-image" style="background-image: url('/images/bob.jpg');"></div>
-              <div class="product-info">
-                <div class="product-meta">
-                  <span>Glassware</span>
-                  <span class="badge">Premium</span>
-                </div>
-                <h3>Glass Piece Clear Pro</h3>
-                <p>Vidro com bom acabamento e presença refinada para vitrines elegantes.</p>
-                <div class="price-row">
-                  <span class="price">R$ 289,90</span>
-                  <button class="add-button" type="button" aria-label="Adicionar Glass Piece Clear Pro">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <div class="product-image" style="background-image: url('/images/sedas.jpg');"></div>
-              <div class="product-info">
-                <div class="product-meta">
-                  <span>Sedas</span>
-                  <span class="badge">Novo</span>
-                </div>
-                <h3>Bem Bolado Street Pack</h3>
-                <p>Combo elegante de sedas e filtros para clientes exigentes e rotinas modernas.</p>
-                <div class="price-row">
-                  <span class="price">R$ 24,90</span>
-                  <button class="add-button" type="button" aria-label="Adicionar Bem Bolado Street Pack">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <div class="product-image" style="background-image: url('/images/shoulder_bag.jpg');"></div>
-              <div class="product-info">
-                <div class="product-meta">
-                  <span>Acessórios</span>
-                  <span class="badge">Combo</span>
-                </div>
-                <h3>Kit Starter Urban</h3>
-                <p>Conjunto de itens premium em apresentação clean e visual moderno.</p>
-                <div class="price-row">
-                  <span class="price">R$ 119,90</span>
-                  <button class="add-button" type="button" aria-label="Adicionar Kit Starter Urban">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <div class="product-image" style="background-image: url('/images/produto_2.jpg');"></div>
-              <div class="product-info">
-                <div class="product-meta">
-                  <span>Dichavador</span>
-                  <span class="badge">Destaque</span>
-                </div>
-                <h3>Grinder Metal Verde</h3>
-                <p>Acabamento sólido e cor de marca para composições confiáveis na vitrine.</p>
-                <div class="price-row">
-                  <span class="price">R$ 79,90</span>
-                  <button class="add-button" type="button" aria-label="Adicionar Grinder Metal Verde">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
+          <div class="about-copy animate-fade-in">
+            <span class="section-kicker">Sobre a Flora Tropical</span>
+            <h2>Uma marca lifestyle com presença premium.</h2>
+            <p>A Flora Tropical une curadoria de produtos, ambiente acolhedor e atendimento responsável. Nosso objetivo é transformar a compra em uma experiência confiável, refinada e memorável.</p>
+            <div class="stats-grid">
+              <strong><span>+120</span> produtos selecionados</strong>
+              <strong><span>2</span> espaços em evolução</strong>
+              <strong><span>18+</span> atendimento responsável</strong>
+            </div>
+            <a class="button button-premium" href="#contato">Fale com a equipe</a>
           </div>
         </div>
       </section>
 
-      <section id="promo" class="section">
-        <div class="section-inner feature-grid">
+      <section id="newsletter" class="section newsletter-section">
+        <div class="container newsletter-card">
           <div>
-            <span class="section-kicker">Ofertas especiais</span>
-            <h2>Promoções que valorizam o lifestyle premium.</h2>
-            <p class="section-copy">Combos selecionados, curadoria exclusiva e atendimento responsável para fortalecer a presença da Flora Tropical.</p>
+            <span class="section-kicker">Clube VIP</span>
+            <h2>Receba novidades, eventos e ofertas especiais.</h2>
           </div>
-
-          <div class="feature-card">
-            <span class="promo-tag">Curadoria exclusiva</span>
-            <p>Seleção pensada para entregar estilo, conforto e narrativa visual, com foco na experiência de marca.</p>
-            <a class="button button-secondary" href="#produtos">Ver ofertas</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="eventos" class="section">
-        <div class="section-inner">
-          <div class="section-header">
-            <span class="section-kicker">Experiência</span>
-            <h2>Eventos, segurança e confiança com estética tropical.</h2>
-            <p class="section-copy">A Flora Tropical é projetada para transmitir tranquilidade, credibilidade e lifestyle em todos os pontos de contato.</p>
-          </div>
-
-          <div class="trust-grid" aria-label="Benefícios da loja">
-            <article class="trust-item">
-              <span class="trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span>
-              <strong>Compra segura</strong>
-              <span>Apresentação visual e layout claro para confiança imediata.</span>
-            </article>
-
-            <article class="trust-item">
-              <span class="trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></span>
-              <strong>Experiência fluida</strong>
-              <span>Navegação simples e organização elegante entre seções e produtos.</span>
-            </article>
-
-            <article class="trust-item">
-              <span class="trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /></svg></span>
-              <strong>Ativações premium</strong>
-              <span>Ambiente preparado para ativações, eventos e lifestyle tropical com charme.</span>
-            </article>
-          </div>
+          <form class="newsletter-form" action="#" method="post">
+            <label class="sr-only" for="newsletter-email">Seu e-mail</label>
+            <input id="newsletter-email" type="email" name="email" placeholder="seuemail@exemplo.com" required />
+            <button class="button button-primary" type="submit">Inscrever</button>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="section-inner footer-grid">
+    <footer id="contato" class="footer">
+      <div class="container footer-grid">
         <div>
-          <a class="brand footer-brand" href="#home">
-            <span class="brand-mark">FT</span>
+          <a class="brand footer-brand" href="#inicio">
+            <img class="brand-logo" src="images/logo.jpg" alt="Logo Flora Tropical" />
             <span class="brand-copy">
               <span class="brand-name">Flora Tropical</span>
-              <span class="brand-subtitle">Head shop lifestyle</span>
+              <span class="brand-subtitle">Tabacaria Premium</span>
             </span>
           </a>
-          <p>Curadoria premium de produtos, ambiente acolhedor e experiência tropical para Barra Grande e Parnaíba.</p>
+          <p>Tradição, qualidade e exclusividade em uma experiência premium de tabacaria.</p>
+        </div>
+
+        <div>
+          <h4>Produtos</h4>
+          <a href="#produtos">Charutos e tabacos</a>
+          <a href="#produtos">Acessórios</a>
+          <a href="#categorias">Categorias</a>
+          <a href="#newsletter">Clube VIP</a>
         </div>
 
         <div>
           <h4>Contato</h4>
-          <p>WhatsApp: (86) 99999-0000<br>contato@floratropical.com.br<br>Barra Grande e Parnaíba, PI</p>
+          <p>WhatsApp: (86) 99999-0000<br />contato@floratropical.com.br<br />Barra Grande e Parnaíba, PI</p>
         </div>
 
         <div>
-          <h4>Links</h4>
-          <nav class="footer-links" aria-label="Links úteis">
-            <a href="#home">Home</a>
-            <a href="#marcas">Marcas</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#promo">Ofertas</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4>Segurança</h4>
-          <div class="seal-list">
-            <span class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" /><circle cx="12" cy="12" r="3" /><path d="M17.5 6.5h.01" /></svg>Instagram</span>
-            <span class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4" /><path d="M20 6 9 17l-5-5" /></svg>Compra segura</span>
-            <span class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>Site seguro</span>
-          </div>
+          <h4>Legal</h4>
+          <a href="#">Política de privacidade</a>
+          <a href="#">Termos de uso</a>
+          <a href="#">Cookies</a>
+          <p>Venda proibida para menores de 18 anos.</p>
         </div>
       </div>
-      <div class="section-inner footer-bottom">Venda proibida para menores de 18 anos. Proposta premium da Flora Tropical.</div>
+      <div class="container footer-bottom">© 2026 Flora Tropical. Todos os direitos reservados.</div>
     </footer>
   </div>
 
-  <script src="js/script.js" defer></script>
+  <script type="module" src="js/script.js"></script>
 </body>
 </html>
