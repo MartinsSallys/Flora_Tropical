@@ -1,0 +1,94 @@
+/* Animações suaves e refinadas para a experiência Flora Tropical */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(244, 196, 48, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(244, 196, 48, 0.05);
+  }
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeInUp 0.9s var(--transition) forwards;
+}
+
+.reveal.delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal.delay-2 {
+  animation-delay: 0.18s;
+}
+
+.reveal.delay-3 {
+  animation-delay: 0.24s;
+}
+
+.glow-pulse {
+  animation: pulseGlow 2.6s ease-in-out infinite;
+}
+
+.gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+.fade-up {
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+.slide-in {
+  animation: slideFade 0.9s ease forwards;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.18);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.button:focus-visible::after,
+.button:hover::after {
+  opacity: 1;
+}

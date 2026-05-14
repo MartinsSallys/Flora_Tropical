@@ -4,4 +4,4 @@ export const brandImages = {
   raw: "/images/brands/raw.png"
 };
 
-export const productPlaceholder = "https://images.unsplash.com/photo-1518441902117-1d0e802c404f?auto=format&fit=crop&w=900&q=80";
+export const productPlaceholder = "/images/tema.jpg";
