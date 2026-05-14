@@ -10,8 +10,8 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 12% 8%, rgba(212, 175, 55, 0.12), transparent 26rem),
-    linear-gradient(180deg, #fffdf9 0%, var(--color-background) 50%, #efe8df 100%);
+    radial-gradient(circle at 12% 8%, rgba(127, 191, 127, 0.16), transparent 26rem),
+    linear-gradient(180deg, #fffdf9 0%, var(--color-background) 50%, var(--color-background-alt) 100%);
   color: var(--color-text-primary);
   font-family: var(--font-body);
   line-height: 1.7;
@@ -53,18 +53,21 @@ h4 {
   margin: 0;
   color: var(--color-primary);
   font-family: var(--font-display);
+  font-weight: 400;
   line-height: 1.08;
+  text-transform: uppercase;
 }
 
 h1 {
   max-width: 780px;
   font-size: clamp(3.1rem, 7vw, 5.8rem);
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 h2 {
   font-size: clamp(2.25rem, 4vw, 3.5rem);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 
 h3 {
@@ -108,7 +111,7 @@ p {
   min-height: 80px;
   padding: 0 clamp(20px, 5vw, 64px);
   border-bottom: 1px solid var(--color-border-light);
-  background: rgba(249, 247, 244, 0.92);
+  background: rgba(249, 247, 244, 0.94);
   box-shadow: var(--shadow-subtle);
   backdrop-filter: blur(18px);
 }
@@ -153,7 +156,7 @@ p {
   justify-content: center;
   gap: clamp(18px, 3vw, 34px);
   color: var(--color-secondary);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -231,14 +234,14 @@ p {
 }
 
 .button-primary {
-  background: var(--color-primary);
+  background: var(--gradient-hover);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(43, 24, 16, 0.15);
+  box-shadow: 0 2px 8px rgba(27, 77, 47, 0.16);
 }
 
 .button-primary:hover {
-  background: var(--color-primary-light);
-  box-shadow: 0 4px 16px rgba(43, 24, 16, 0.25);
+  background: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(27, 77, 47, 0.25);
 }
 
 .button-secondary {
@@ -285,6 +288,7 @@ p {
   min-height: 720px;
   display: grid;
   align-items: center;
+  justify-items: center;
   isolation: isolate;
 }
 
@@ -305,24 +309,29 @@ p {
 .hero-overlay {
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(43, 24, 16, 0.82), rgba(43, 24, 16, 0.52) 45%, rgba(43, 24, 16, 0.18)),
-    linear-gradient(180deg, rgba(43, 24, 16, 0.1), rgba(43, 24, 16, 0.74));
+    linear-gradient(135deg, rgba(13, 40, 24, 0.88) 0%, rgba(27, 77, 47, 0.82) 50%, rgba(45, 123, 71, 0.76) 100%),
+    linear-gradient(180deg, rgba(13, 40, 24, 0.08), rgba(13, 40, 24, 0.72));
+  backdrop-filter: blur(2px);
 }
 
 .hero-content {
   color: #fff;
   padding-top: var(--space-8);
+  text-align: center;
 }
 
 .hero-content h1 {
   color: #fff;
+  margin-inline: auto;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.36);
 }
 
 .hero-content p {
   max-width: 620px;
-  margin-top: var(--space-4);
+  margin: var(--space-4) auto 0;
   color: rgba(255, 255, 255, 0.88);
   font-size: 1.08rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.26);
 }
 
 .eyebrow,
@@ -350,6 +359,7 @@ p {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-3);
   margin-top: var(--space-6);
 }
@@ -359,7 +369,7 @@ p {
 }
 
 .section-alt {
-  background: rgba(239, 235, 230, 0.68);
+  background: rgba(255, 250, 240, 0.78);
 }
 
 .section-header {
@@ -574,7 +584,7 @@ p {
   align-items: center;
   padding: var(--space-6);
   background:
-    linear-gradient(135deg, rgba(212, 175, 55, 0.13), transparent),
+    linear-gradient(135deg, rgba(127, 191, 127, 0.14), transparent),
     var(--color-surface);
 }
 
@@ -602,24 +612,38 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(43, 24, 16, 0.1);
+  box-shadow: 0 0 0 3px rgba(27, 77, 47, 0.12);
 }
 
 .footer {
+  position: relative;
   padding: var(--space-7) 0 var(--space-5);
-  background: var(--color-primary);
+  background: #1a1a1a;
   color: #fff;
+  overflow: hidden;
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(13, 40, 24, 0.97) 0%, rgba(27, 77, 47, 0.95) 50%, rgba(45, 123, 71, 0.92) 100%);
+  pointer-events: none;
 }
 
 .footer-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.3fr 0.8fr 0.9fr 0.9fr;
   gap: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .footer .brand-name,
 .footer h4 {
-  color: #fff;
+  color: var(--color-accent-gold);
 }
 
 .footer .brand-subtitle,
@@ -637,14 +661,334 @@ select:focus {
 .footer a {
   display: block;
   margin-bottom: var(--space-2);
+  transition: color var(--transition), background var(--transition);
+}
+
+.footer a:hover {
+  color: var(--color-accent-gold);
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social a:hover {
+  background: var(--color-accent-gold);
+  color: var(--color-primary);
+}
+
+.footer-newsletter {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.footer-newsletter input {
+  border: 0;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .footer-bottom {
-  margin-top: var(--space-6);
-  padding-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  align-items: center;
+  margin-top: var(--space-5);
   color: rgba(255, 255, 255, 0.58);
   font-size: 0.86rem;
+}
+
+.footer-bottom p {
+  color: inherit;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.footer-links a {
+  margin: 0;
+}
+
+.cannabis-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+}
+
+.cannabis-section::before,
+.cannabis-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cannabis-section::before {
+  top: -160px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(45, 123, 71, 0.1) 0%, transparent 70%);
+}
+
+.cannabis-section::after {
+  bottom: -140px;
+  left: -120px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(127, 191, 127, 0.11) 0%, transparent 70%);
+}
+
+.cannabis-header {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+  text-align: center;
+}
+
+.cannabis-header p {
+  max-width: 620px;
+  font-size: 1.08rem;
+}
+
+.cannabis-badge,
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-accent-cannabis);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cannabis-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.cannabis-card,
+.location-card {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-small);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.cannabis-card {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.cannabis-card:hover,
+.location-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-large);
+}
+
+.cannabis-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(127, 191, 127, 0.16);
+  color: var(--color-primary);
+  animation: float 3s ease-in-out infinite;
+}
+
+.cannabis-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.cannabis-card h3,
+.location-content h3 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+
+.cannabis-card p {
+  min-height: 90px;
+  font-size: 0.94rem;
+}
+
+.cannabis-cta {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  padding: var(--space-7) var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--gradient-hover);
+  color: #fff;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+}
+
+.cannabis-cta h3,
+.cannabis-cta p {
+  color: #fff;
+}
+
+.locations-section {
+  background: var(--color-background);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.location-card {
+  overflow: hidden;
+}
+
+.location-image {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.location-card:hover .location-image img {
+  transform: scale(1.05);
+}
+
+.location-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.location-content {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.location-info {
+  font-size: 0.95rem;
+}
+
+.location-details {
+  display: grid;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.location-details p {
+  display: grid;
+  gap: 3px;
+}
+
+.location-details strong {
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.location-details span {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+}
+
+.location-ctas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: width var(--transition), transform var(--transition), box-shadow var(--transition), background var(--transition);
+  animation: bounce 2s infinite;
+}
+
+.whatsapp-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-label {
+  position: absolute;
+  right: 78px;
+  display: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: #25d366;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.whatsapp-float:hover {
+  width: 154px;
+  border-radius: var(--radius-full);
+  background: #20ba5a;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float:hover .whatsapp-label {
+  display: block;
+  animation: slideInRight 0.3s ease;
 }
 
 @media (max-width: 1024px) {
@@ -686,8 +1030,15 @@ select:focus {
   }
 
   .product-grid,
-  .category-grid {
+  .category-grid,
+  .cannabis-grid,
+  .locations-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -706,13 +1057,65 @@ select:focus {
 
   .product-grid,
   .category-grid,
+  .cannabis-grid,
+  .locations-grid,
   .stats-grid,
-  .newsletter-form {
+  .newsletter-form,
+  .location-ctas {
     grid-template-columns: 1fr;
   }
 
   .button,
   .hero-actions {
     width: 100%;
+  }
+
+  .cannabis-card p {
+    min-height: 0;
+  }
+
+  .location-image {
+    height: 220px;
+  }
+
+  .whatsapp-float {
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .whatsapp-float:hover {
+    width: 56px;
+    border-radius: 50%;
+  }
+
+  .whatsapp-float:hover .whatsapp-label {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background:
+      radial-gradient(circle at 12% 8%, rgba(127, 191, 127, 0.12), transparent 26rem),
+      linear-gradient(180deg, #0d2818 0%, var(--color-background) 55%, var(--color-background-alt) 100%);
+  }
+
+  .navbar {
+    background: rgba(13, 40, 24, 0.94);
+  }
+
+  .nav-links {
+    color: rgba(249, 247, 244, 0.84);
+  }
+
+  .brand-subtitle {
+    color: rgba(249, 247, 244, 0.68);
   }
 }
