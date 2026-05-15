@@ -39,7 +39,15 @@ function renderFilters() {
 }
 
 function renderCategories() {
-  categoryGrid.innerHTML = categories.map(renderCategoryCard).join("");
+  const productCounts = products.reduce((counts, product) => {
+    counts[product.category] = (counts[product.category] || 0) + 1;
+    return counts;
+  }, {});
+
+  categoryGrid.innerHTML = categories.map((category) => renderCategoryCard({
+    ...category,
+    productCount: productCounts[category.name] || 0
+  })).join("");
 }
 
 function setupMobileMenu() {

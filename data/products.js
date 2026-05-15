@@ -1,9 +1,9 @@
 export const products = [
   {
     id: "001",
-    name: "Charuto Habano Premium",
-    category: "Charutos Importados",
-    description: "Charuto importado de excelente qualidade, selecionado para experiências especiais.",
+    name: "Bone Raw",
+    category: "Bones",
+    description: "Boina raw excelente qualidade, selecionado para conforto.",
     price: 125.9,
     originalPrice: 155.9,
     image: "images/produto_2.jpg",
