@@ -55,15 +55,15 @@
   --container: 1200px;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #0d2818;
-    --color-background-alt: #162c1e;
-    --color-surface: #102b1a;
+    --color-background: #1a1a1a;
+    --color-background-alt: #222222;
+    --color-surface: #2d2d2d;
     --color-text-primary: #f9f7f4;
     --color-text-secondary: #c9c3bc;
-    --color-border: #2d3a2f;
-    --color-border-light: #284532;
+    --color-border: #444444;
+    --color-border-light: #555555;
   }
 }
 * {
