@@ -1,58 +1,25 @@
-# Headshop Site
+# Flora Tropical
 
-Site estático para head shop premium usando HTML, CSS e JavaScript puro, com visual clean e cores de marca equilibradas.
+Site estático simples em HTML, CSS e JavaScript puro.
 
 ## Estrutura
 
 ```txt
-headshop-site/
-├── public/
-│   ├── images/
-│   │   ├── brands/
-│   │   ├── products/
-│   │   └── banners/
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   ├── data/
-│   ├── App.js
-│   └── main.js
+/
 ├── index.html
-├── package.json
-└── README.md
+├── style.css
+├── script.js
+└── assets/
 ```
 
 ## Rodar localmente
 
-```bash
-npm install
-npm run dev
-```
+Abra `index.html` diretamente no navegador.
 
-O projeto usa módulos JavaScript nativos. Por isso, abra por servidor local, não pelo arquivo `index.html` direto.
+## GitHub Pages
 
-## Deploy no GitHub Pages
+Publique a raiz do repositório em:
 
-Há duas formas seguras:
+`Settings > Pages > Deploy from a branch > main / root`
 
-1. Publicar a raiz do repositório em **Settings > Pages > Deploy from a branch > main / root**.
-2. Gerar build com Vite e publicar a pasta `dist`:
-
-```bash
-npm ci
-npm run build
-```
-
-O `vite.config.js` usa `base: "./"`, então os arquivos gerados funcionam em repositórios publicados em subpasta, como `https://usuario.github.io/Flora_Tropical/`.
-
-## Assets
-
-As pastas em `public/images` já estão preparadas para receber imagens reais:
-
-- `public/images/brands/bem-bolado.png`
-- `public/images/brands/smoking.png`
-- `public/images/brands/raw.png`
-- `public/images/products/`
-- `public/images/banners/`
+Não há Vite, npm, build, bundler ou dependência de Node.
