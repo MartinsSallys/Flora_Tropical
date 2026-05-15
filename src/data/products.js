@@ -5,7 +5,7 @@ export const products = [
     badge: "Premium",
     description: "Vidro com boa apresentação e acabamento ideal para vitrine.",
     price: "R$ 289,90",
-    image: "/images/bob.jpg"
+    image: "images/bob.jpg"
   },
   {
     name: "Bem Bolado Street Pack",
@@ -13,7 +13,7 @@ export const products = [
     badge: "Novo",
     description: "Sedas e filtros em combo prático para compra recorrente.",
     price: "R$ 24,90",
-    image: "/images/sedas.jpg"
+    image: "images/sedas.jpg"
   },
   {
     name: "Kit Starter Urban",
@@ -21,7 +21,7 @@ export const products = [
     badge: "Combo",
     description: "Itens essenciais com boa apresentação e preço competitivo.",
     price: "R$ 119,90",
-    image: "/images/shoulder_bag.jpg"
+    image: "images/shoulder_bag.jpg"
   },
   {
     name: "Grinder Metal Verde",
@@ -29,6 +29,6 @@ export const products = [
     badge: "Destaque",
     description: "Acabamento sólido, cor de marca e boa percepção de valor.",
     price: "R$ 79,90",
-    image: "/images/produto_2.jpg"
+    image: "images/produto_2.jpg"
   }
 ];

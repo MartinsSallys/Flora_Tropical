@@ -7,7 +7,7 @@ export const categories = [
   {
     name: "Tabacos Premium",
     description: "Produtos escolhidos por qualidade, origem e experiência.",
-    image: "https://images.tcdn.com.br/img/img_prod/1376434/tabaco_vio_pimenta_rosin_premium_1_20250907130045_fce2186f71d3.jpg"
+    image: "images/bob.jpg"
   },
   {
     name: "Acessórios",

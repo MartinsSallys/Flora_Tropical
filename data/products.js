@@ -1,9 +1,9 @@
 export const products = [
   {
     id: "001",
-    name: "Bone Raw",
-    category: "Bones",
-    description: "Boina raw excelente qualidade, selecionado para conforto.",
+    name: "Boné Raw",
+    category: "Bonés",
+    description: "Boné Raw de excelente qualidade, selecionado para conforto.",
     price: 125.9,
     originalPrice: 155.9,
     image: "images/produto_2.jpg",
