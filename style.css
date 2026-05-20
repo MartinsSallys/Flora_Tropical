@@ -85,12 +85,12 @@ body {
 
   background-image:
  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
- url("../assets/espaço-físico.jpg");
+ url("/Flora_Tropical/assets/espaco-fisico.jpg");
 
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {
