@@ -78,22 +78,15 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(127, 191, 127, 0.16), transparent 26rem),
-    linear-gradient(180deg, #fffdf9 0%, var(--color-background) 50%, var(--color-background-alt) 100%);
   color: var(--color-text-primary);
   font-family: var(--font-body);
   line-height: 1.7;
   margin: 0;
 
   background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url("../assets/espaco-fisico.jpg") no-repeat center center fixed;
-
-  
-
+  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+  url("../assets/espaco-fisico.jpg") no-repeat center center fixed;
   min-height: 100vh;
-
   backdrop-filter: blur(6px);
 }
 
