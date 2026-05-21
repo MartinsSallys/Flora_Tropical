@@ -1697,3 +1697,10 @@ select:focus {
     transition-duration: 0.01ms !important;
   }
 }
+@media (max-width: 768px) {
+  body{
+    background-size: contain;
+    background-position: top center;
+    background-attachment: scroll;
+  }
+}
