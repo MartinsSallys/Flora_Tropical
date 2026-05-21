@@ -85,8 +85,9 @@ body {
 
   background-image:
  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
- url("/Flora_Tropical/assets/espaco-fisico.jpg");
+ url("assets/espaco-fisico.jpg");
 
+  backdrop-filter: blur(4px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -190,7 +191,7 @@ p {
   border-bottom: 1px solid var(--color-border-light);
   background: rgba(249, 247, 244, 0.94);
   box-shadow: var(--shadow-subtle);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(4px);
 }
 
 .brand,
@@ -388,7 +389,7 @@ p {
   background:
     linear-gradient(120deg, rgba(42, 56, 47, 0.88) 0%, rgba(39, 58, 46, 0.82) 50%, rgba(45, 123, 71, 0.76) 100%),
     linear-gradient(180deg, rgba(13, 40, 24, 0.08), rgba(13, 40, 24, 0.72));
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
 }
 
 .hero-content {
@@ -443,6 +444,7 @@ p {
 
 .section {
   padding: var(--space-8) 0;
+  background: rgba(0,0,0,0.35);
 }
 
 .section-alt {
@@ -505,7 +507,7 @@ p {
 .category-card,
 .newsletter-card {
   background: rgba(20,20,20,0.75);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: var(--shadow-small);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
@@ -696,8 +698,8 @@ select:focus {
   position: relative;
   overflow: hidden;
   padding-block: var(--space-8);
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
 }
 
 .products-premium-section::before {
@@ -980,7 +982,7 @@ select:focus {
   overflow: hidden;
   padding-block: var(--space-8);
   background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
 }
 
 .categories-section::after {
@@ -1231,8 +1233,8 @@ select:focus {
 .cannabis-section {
   position: relative;
   overflow: hidden;
-  background: rgba(0,0,0,0.40);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
 }
 
 .cannabis-section::before,
@@ -1370,8 +1372,8 @@ select:focus {
 }
 
 .locations-section {
-   background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
 }
 
 .locations-grid {
