@@ -1713,23 +1713,15 @@ select:focus {
 }
 
 @media (min-width: 769px){
-  .mobile-bg{
-    position: fixed;
-  top: 0;
-  left: 0;
+  ..mobile-bg{
+  position: fixed;
+  inset: 0;
 
   width: 100vw;
   height: 100vh;
 
-  background-image:
-    linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20)),
-    url("assets/espaco-fisico-mobile.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("assets/espaco-fisico-mobile.jpg") center center / cover no-repeat;
 
   z-index: -1;
-  display: none;
-  }
+}
 }
