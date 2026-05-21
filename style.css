@@ -55,18 +55,6 @@
   --container: 1200px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #f9f7f4;
-    --color-background-alt: #fffaf0;
-    --color-surface: #ffffff;
-    --color-text-primary: #1a1a1a;
-    --color-text-secondary: #555555;
-    --color-border: #d9d3cc;
-    --color-border-light: #e8e5df;
-  }
-}
-
 * {
   box-sizing: border-box;
 }
@@ -1628,23 +1616,16 @@ select:focus {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background:
-      radial-gradient(circle at 12% 8%, rgba(127, 191, 127, 0.16), transparent 26rem),
-      linear-gradient(180deg, #fffdf9 0%, #f9f7f4 50%, #fffaf0 100%);
-  }
-
   .navbar {
     background: rgba(249, 247, 244, 0.94);
   }
 
   .products-premium-section {
-    background: linear-gradient(180deg, #f9f7f4 0%, #f5f3ef 100%);
+    background: linear-gradient(transparent), rgba(0,0,0,0.35);
   }
 
   .categories-section {
-    background: linear-gradient(180deg, #f5f3ef 0%, #f9f7f4 100%);
+    background: linear-gradient(transparent), rgba(0,0,0,0.35);
   }
 
   .nav-links {
