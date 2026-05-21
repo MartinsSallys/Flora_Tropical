@@ -1234,7 +1234,7 @@ select:focus {
   right: -120px;
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, rgba(45, 123, 71, 0.1) 0%, transparent 70%);
+ 
 }
 
 .cannabis-section::after {
