@@ -86,7 +86,8 @@ body::before {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -155,6 +156,8 @@ p {
 }
 
 .page {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 
