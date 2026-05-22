@@ -67,16 +67,26 @@ html, body {
 }
 
 body {
+  background: #000;
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url("assets/espaco-fisico.jpg");
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  isolation: isolate;
+  background-attachment: scroll;
+  z-index: -1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -178,8 +188,6 @@ p {
   border-bottom: 1px solid var(--color-border-light);
   background: rgba(249, 247, 244, 0.94);
   box-shadow: var(--shadow-subtle);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
 .brand,
@@ -377,8 +385,6 @@ p {
   background:
     linear-gradient(120deg, rgba(42, 56, 47, 0.88) 0%, rgba(39, 58, 46, 0.82) 50%, rgba(45, 123, 71, 0.76) 100%),
     linear-gradient(180deg, rgba(13, 40, 24, 0.08), rgba(13, 40, 24, 0.72));
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
 .hero-content {
@@ -496,8 +502,6 @@ p {
 .category-card,
 .newsletter-card {
   background: rgba(20,20,20,0.75);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: var(--shadow-small);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
@@ -689,8 +693,6 @@ select:focus {
   overflow: hidden;
   padding-block: var(--space-8);
   background: rgba(0,0,0,0.35);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
 .products-premium-section::before {
@@ -973,8 +975,6 @@ select:focus {
   overflow: hidden;
   padding-block: var(--space-8);
   background: rgba(0,0,0,0.35);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
 .categories-section::after {
@@ -1225,8 +1225,6 @@ select:focus {
   position: relative;
   overflow: hidden;
   background: rgba(0,0,0,0.35);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
 .cannabis-section::before,
@@ -1365,8 +1363,6 @@ select:focus {
 
 .locations-section {
   background: rgba(0,0,0,0.35);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
 }
 
 .locations-grid {
@@ -1683,85 +1679,19 @@ select:focus {
 }
 
 .mobile-bg {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("assets/espacofisico_mobile.jpeg") center center / cover no-repeat;
-  pointer-events: none;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-@media (min-width: 769px) {
-  .mobile-bg {
-    display: none;
-  }
+  display: none;
 }
 
 @supports (-webkit-touch-callout: none) {
-  body {
-    position: relative;
-    background-image: none;
-    background-attachment: scroll;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
-
   body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background:
-      linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-      url("assets/espaco-fisico.jpg") center center / cover no-repeat;
-    pointer-events: none;
+    background-attachment: scroll !important;
     -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    will-change: transform;
   }
 
-  .navbar,
+  .hero,
   .hero-overlay,
-  .product-card,
-  .category-card,
-  .newsletter-card,
-  .products-premium-section,
-  .categories-section,
-  .cannabis-section,
-  .locations-section {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
-
-  .navbar {
-    background: rgba(249, 247, 244, 0.94);
-  }
-
-  .products-premium-section,
-  .categories-section,
-  .cannabis-section,
-  .locations-section {
-    background: rgba(0, 0, 0, 0.35);
-  }
-
-  .mobile-bg {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  @supports (-webkit-touch-callout: none) {
-    body::before {
-      background:
-        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url("assets/espacofisico_mobile.jpeg") center center / cover no-repeat;
-    }
+  .section {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
   }
 }
