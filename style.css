@@ -76,7 +76,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 a {
@@ -1693,7 +1693,8 @@ select:focus {
     transition-duration: 0.01ms !important;
   }
 }
-.mobile-bg {
+.mobile-bg{
+ .mobile-bg{
   position: fixed;
   inset: 0;
 
@@ -1704,53 +1705,10 @@ select:focus {
 
   z-index: -1;
 }
-
+}
 
 @media (min-width: 769px){
   .mobile-bg{
     display: none;
   } 
-}
-/* SAFARI / iPHONE FIX */
-@supports (-webkit-touch-callout: none) {
-  body {
-    background: #000;
-    background-attachment: scroll !important;
-  }
-
-  /* Elemento de fundo fixo que vai funcionar no Safari */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background:
-      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-      url("assets/espaco-fisico.jpg") center / cover no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    z-index: -999;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-
-  /* Remove backdrop filter que causa problemas */
-  .hero,
-  .section,
-  .products-premium-section,
-  .categories-section,
-  .cannabis-section,
-  .locations-section {
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
-  }
-
-  .hero-image {
-    animation: none !important;
-  }
-
-  .hero {
-    min-height: 100svh;
-  }
 }
