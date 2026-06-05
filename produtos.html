@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light"/>
+  <meta name="description" content="Catálogo completo de produtos premium da Flora Tropical. Tabacos, sedas, acessórios e artigos especiais selecionados com qualidade e exclusividade." />
+  <meta name="keywords" content="produtos Flora Tropical, tabacos, sedas, acessórios, premium, catálogo" />
+  <meta property="og:title" content="Produtos | Flora Tropical" />
+  <meta property="og:description" content="Catálogo premium com curadoria de produtos exclusivos." />
+  <title>Produtos | Flora Tropical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Righteous&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="mobile-bg"></div>
+  <div class="page">
+    <header class="navbar" aria-label="Navegação principal">
+      <a class="brand" href="index.html" aria-label="Flora Tropical">
+        <img class="brand-logo" src="assets/logo.jpg" alt="Logo Flora Tropical" />
+        <span class="brand-copy">
+          <span class="brand-name">Flora Tropical</span>
+          <span class="brand-subtitle">Tabacaria Premium</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Links principais">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="cannabis-medicinal.html">Cannabis Medicinal</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="unidades.html">Unidades</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="button button-nav" href="index.html#newsletter">Clube VIP</a>
+        <button class="icon-button icon-badge" type="button" data-count="3" aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h8.96a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+        </button>
+        <button class="menu-toggle icon-button" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img class="hero-image" src="assets/sedas.jpg" alt="Catálogo de Produtos Flora Tropical" />
+        <div class="hero-overlay"></div>
+        <div class="container hero-content animate-slide-in">
+          <span class="eyebrow">Curadoria Premium</span>
+          <h1>Produtos Selecionados</h1>
+          <p>Explorar nosso catálogo completo de produtos curados com excelência, qualidade garantida e atendimento especializado.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#catalogo">Explorar catálogo</a>
+            <a class="button button-secondary light" href="cannabis-medicinal.html">Cannabis medicinal</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="catalogo" class="section products-premium-section">
+        <div class="container products-header animate-fade-in">
+          <div class="header-left">
+            <span class="section-badge">Catálogo completo</span>
+            <h2>Produtos Premium</h2>
+            <p>Seleção exclusiva de itens especiais com preço, avaliação e compra rápida.</p>
+          </div>
+          <a class="view-all-btn" href="#catalogo">Filtrar</a>
+        </div>
+
+        <div class="container filter-bar" id="product-filters" aria-label="Filtros de produtos"></div>
+        <div class="container products-grid" id="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section newsletter-section">
+        <div class="container newsletter-card">
+          <div>
+            <span class="section-kicker">Clube VIP</span>
+            <h2>Receba novidades, eventos e ofertas especiais.</h2>
+          </div>
+          <form class="newsletter-form" action="#" method="post">
+            <label class="sr-only" for="newsletter-email">Seu e-mail</label>
+            <input id="newsletter-email" type="email" name="email" placeholder="seuemail@exemplo.com" required />
+            <button class="button button-primary" type="submit">Inscrever</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-overlay" aria-hidden="true"></div>
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <a class="brand footer-brand" href="index.html">
+            <img class="brand-logo" src="assets/logo.jpg" alt="Logo Flora Tropical" />
+            <span class="brand-copy">
+              <span class="brand-name">Flora Tropical</span>
+              <span class="brand-subtitle">Tabacaria Premium</span>
+            </span>
+          </a>
+          <p>Tabacaria Premium com tradição, qualidade, exclusividade e múltiplas unidades para melhor atendê-lo.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="https://wa.me/5586999990000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5z"></path><path d="M9.2 8.8c.2 3 2.3 5.1 5.3 5.7"></path></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Produtos</h4>
+          <a href="produtos.html">Catálogo Completo</a>
+          <a href="categorias.html">Categorias</a>
+          <a href="cannabis-medicinal.html">Cannabis Medicinal</a>
+          <a href="index.html#newsletter">Clube VIP</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contato</h4>
+          <p><strong>Parnaíba:</strong><br />(86) 3221-1234<br /><a href="https://wa.me/558632211234" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+          <p><strong>Barra Grande:</strong><br />(86) 3284-5678<br /><a href="https://wa.me/558632845678" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Newsletter</h4>
+          <p>Receba promoções e novidades exclusivas.</p>
+          <form class="footer-newsletter" action="#" method="post">
+            <label class="sr-only" for="footer-email">Seu e-mail</label>
+            <input id="footer-email" type="email" name="email" placeholder="Seu email" required />
+            <button class="button button-premium" type="submit">Inscrever</button>
+          </form>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Flora Tropical. Todos os direitos reservados. Venda proibida para menores de 18 anos.</p>
+        <div class="footer-links">
+          <a href="#">Política de privacidade</a>
+          <a href="#">Termos de uso</a>
+          <a href="#">Cookies</a>
+          <a href="https://github.com/MartinsSallys" target="_blank" rel="noopener noreferrer">Desenvolvedor</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <a href="https://wa.me/5586999990000?text=Olá! Tenho interesse em conhecer seus produtos" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5z"></path>
+      <path d="M9.2 8.8c.2 3 2.3 5.1 5.3 5.7"></path>
+    </svg>
+    <span class="whatsapp-label">WhatsApp</span>
+  </a>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1681,6 +1681,187 @@ select:focus {
   }
 }
 
+.values-grid,
+.commitments-grid,
+.contact-channels {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.value-card,
+.commitment-item,
+.contact-card {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-small);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  text-align: center;
+}
+
+.value-card:hover,
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-large);
+}
+
+.value-icon,
+.contact-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto var(--space-4);
+  border-radius: 50%;
+  background: rgba(127, 191, 127, 0.16);
+  color: var(--color-primary);
+}
+
+.value-icon svg,
+.contact-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.value-card h3,
+.contact-card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.commitment-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: var(--space-5);
+}
+
+.commitment-item h4 {
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.commitment-item p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.contact-hours {
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: var(--space-2);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.social-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(127, 191, 127, 0.14);
+  color: var(--color-primary);
+  transition: transform var(--transition), background var(--transition), color var(--transition);
+}
+
+.social-icon:hover {
+  transform: translateY(-4px);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.contact-form label {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 77, 47, 0.12);
+}
+
+@media (max-width: 1024px) {
+  .values-grid,
+  .commitments-grid,
+  .contact-channels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .values-grid,
+  .commitments-grid,
+  .contact-channels {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card,
+  .commitment-item,
+  .contact-card {
+    padding: var(--space-4);
+  }
+
+  .contact-form {
+    gap: var(--space-3);
+  }
+}
+
+
 .mobile-bg {
   display: none;
 }
