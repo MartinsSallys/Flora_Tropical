@@ -1879,3 +1879,314 @@ select:focus {
     backdrop-filter: none !important;
   }
 }
+
+/* Loading, Empty State, Error */
+.loading-container {
+  display: grid;
+  place-items: center;
+  padding: var(--space-7);
+  text-align: center;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(27, 77, 47, 0.1);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  padding: var(--space-7);
+  text-align: center;
+  min-height: 300px;
+}
+
+.empty-state-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-4);
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  margin-bottom: var(--space-2);
+}
+
+.empty-state p {
+  color: var(--color-text-secondary);
+}
+
+.error-alert {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 2px solid var(--color-danger);
+  border-radius: var(--radius-lg);
+  background: rgba(204, 0, 0, 0.08);
+  margin-bottom: var(--space-5);
+}
+
+.error-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-danger);
+  flex-shrink: 0;
+}
+
+.error-content h3 {
+  color: var(--color-danger);
+  margin-bottom: var(--space-1);
+}
+
+.error-content p {
+  color: var(--color-text-secondary);
+}
+
+/* Formulário */
+.form-group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 77, 47, 0.12);
+}
+
+.form-group input.has-error,
+.form-group textarea.has-error,
+.form-group select.has-error {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.12);
+}
+
+.form-error {
+  display: block;
+  color: var(--color-danger);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: var(--space-1);
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-top: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.pagination-btn {
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0 var(--space-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.pagination-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.pagination-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* FAQ */
+.faq-item {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-small);
+  transition: box-shadow var(--transition);
+  margin-bottom: var(--space-3);
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-question h4 {
+  color: var(--color-primary);
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary);
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.faq-answer p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.search-input {
+  flex: 1;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 77, 47, 0.12);
+}
+
+.search-btn {
+  min-height: 48px;
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Success Alert */
+.success-alert {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 2px solid var(--color-success);
+  border-radius: var(--radius-lg);
+  background: rgba(45, 80, 22, 0.08);
+  margin-bottom: var(--space-5);
+  animation: slideInUp 0.4s ease-out;
+}
+
+.success-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.alert-content h3 {
+  color: var(--color-success);
+  margin-bottom: var(--space-1);
+}
+
+.alert-content p {
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 640px) {
+  .values-grid,
+  .commitments-grid,
+  .contact-channels {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card,
+  .commitment-item,
+  .contact-card {
+    padding: var(--space-4);
+  }
+
+  .contact-form {
+    gap: var(--space-3);
+  }
+
+  .pagination {
+    gap: var(--space-1);
+  }
+
+  .pagination-btn {
+    min-width: 36px;
+    padding: 0 var(--space-2);
+    font-size: 0.8rem;
+  }
+}
+

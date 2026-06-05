@@ -1,49 +1,101 @@
-const productGrid = document.querySelector("#product-grid");
-const categoryGrid = document.querySelector("#category-grid");
-const filterBar = document.querySelector("#product-filters");
+// Home Page - Controller
+class HomePage {
+  constructor() {
+    this.currentCategory = 'Todos';
+    this.isLoading = false;
 
-const categoriesForFilter = ["Todos", ...new Set(products.map((product) => product.category))];
+    this.init();
+  }
 
-function renderProducts(category = "Todos") {
-  const filteredProducts = category === "Todos"
-    ? products
-    : products.filter((product) => product.category === category);
+  async init() {
+    await this.loadProducts();
+    await this.loadCategories();
+    await this.setupEventListeners();
+  }
 
-  productGrid.innerHTML = filteredProducts.map(renderProductCard).join("");
+  async loadProducts() {
+    const grid = document.querySelector('#product-grid');
+    if (!grid) return;
+
+    grid.innerHTML = LoadingSpinner.render();
+
+    try {
+      const response = await apiService.getProducts();
+      this.renderProducts(response.items);
+    } catch (error) {
+      console.error('Erro ao carregar produtos:', error);
+      grid.innerHTML = ErrorAlert.render(error.message);
+    }
+  }
+
+  renderProducts(products) {
+    const grid = document.querySelector('#product-grid');
+    if (!grid) return;
+
+    if (!products.length) {
+      grid.innerHTML = EmptyState.render('Nenhum produto encontrado');
+      return;
+    }
+
+    grid.innerHTML = products
+      .slice(0, 4)
+      .map(p => ProductCard.render(p))
+      .join('');
+  }
+
+  async loadCategories() {
+    const grid = document.querySelector('#category-grid');
+    if (!grid) return;
+
+    grid.innerHTML = LoadingSpinner.render();
+
+    try {
+      const response = await apiService.getCategories();
+      this.renderCategories(response.items);
+    } catch (error) {
+      console.error('Erro ao carregar categorias:', error);
+      grid.innerHTML = ErrorAlert.render(error.message);
+    }
+  }
+
+  renderCategories(categories) {
+    const grid = document.querySelector('#category-grid');
+    if (!grid) return;
+
+    if (!categories.length) {
+      grid.innerHTML = EmptyState.render('Nenhuma categoria encontrada');
+      return;
+    }
+
+    grid.innerHTML = categories
+      .map(c => CategoryCard.render(c))
+      .join('');
+  }
+
+  async setupEventListeners() {
+    // Filtros de produtos (se houver)
+    const filterBar = document.querySelector('#product-filters');
+    if (filterBar) {
+      filterBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-category]');
+        if (btn) {
+          this.currentCategory = btn.dataset.category;
+          this.loadProducts();
+        }
+      });
+    }
+
+    // Menu mobile
+    setupMobileMenu();
+  }
 }
 
-function renderFilters() {
-  filterBar.innerHTML = categoriesForFilter.map((category, index) => `
-    <button class="filter-button ${index === 0 ? "is-active" : ""}" type="button" data-category="${category}">
-      ${category}
-    </button>
-  `).join("");
-
-  filterBar.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-category]");
-    if (!button) return;
-
-    document.querySelectorAll(".filter-button").forEach((item) => {
-      item.classList.toggle("is-active", item === button);
-    });
-
-    renderProducts(button.dataset.category);
+// Inicializar quando DOM estiver pronto
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    new HomePage();
   });
+} else {
+  new HomePage();
 }
 
-function renderCategories() {
-  const productCounts = products.reduce((counts, product) => {
-    counts[product.category] = (counts[product.category] || 0) + 1;
-    return counts;
-  }, {});
-
-  categoryGrid.innerHTML = categories.map((category) => renderCategoryCard({
-    ...category,
-    productCount: productCounts[category.name] || 0
-  })).join("");
-}
-
-renderFilters();
-renderProducts();
-renderCategories();
-setupMobileMenu();

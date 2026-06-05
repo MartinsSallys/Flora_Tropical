@@ -152,21 +152,11 @@
     <span class="whatsapp-label">WhatsApp</span>
   </a>
 
-  <script src="js/data.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/services.js"></script>
   <script src="js/utils.js"></script>
-  <script>
-    const categoryGrid = document.querySelector("#category-grid");
-    const productCounts = products.reduce((counts, product) => {
-      counts[product.category] = (counts[product.category] || 0) + 1;
-      return counts;
-    }, {});
-
-    categoryGrid.innerHTML = categories.map((category) => renderCategoryCard({
-      ...category,
-      productCount: productCounts[category.name] || 0
-    })).join("");
-
-    setupMobileMenu();
-  </script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/categories.js"></script>
 </body>
 </html>

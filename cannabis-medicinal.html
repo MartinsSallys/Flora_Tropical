@@ -114,6 +114,17 @@
           </form>
         </div>
       </section>
+
+      <section class="section">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: var(--space-7);">
+            <span class="section-kicker">Dúvidas frequentes</span>
+            <h2>Perguntas Frequentes</h2>
+            <p>Esclareça suas dúvidas sobre cannabis medicinal e nossos serviços.</p>
+          </div>
+          <div class="faq-container" id="faq-container"></div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -179,12 +190,11 @@
     <span class="whatsapp-label">WhatsApp</span>
   </a>
 
-  <script src="js/data.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/services.js"></script>
   <script src="js/utils.js"></script>
-  <script>
-    const benefitsGrid = document.querySelector("#benefits-grid");
-    benefitsGrid.innerHTML = medicinalBenefits.map(renderBenefitCard).join("");
-    setupMobileMenu();
-  </script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/medicinal.js"></script>
 </body>
 </html>
