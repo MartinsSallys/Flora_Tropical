@@ -43,7 +43,7 @@ class MedicinalPage {
         </div>
         <h3>${b.title}</h3>
         <p>${b.description}</p>
-        <a class="button button-primary" href="https://wa.me/5586999990000?text=Olá! Quero saber mais sobre ${b.title.toLowerCase()}" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+        <a class="button button-primary" href="https://wa.me/5586994901317?text=Olá! Quero saber mais sobre ${b.title.toLowerCase()}" target="_blank" rel="noopener noreferrer">Saiba mais</a>
       </article>
     `).join('');
   }

@@ -9,6 +9,8 @@ function setupMobileMenu() {
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
+  setupHeroCarousel();
+
   if (!menuToggle || !navLinks) return;
 
   menuToggle.addEventListener("click", () => {
@@ -21,6 +23,74 @@ function setupMobileMenu() {
       navLinks.classList.remove("active");
       menuToggle.setAttribute("aria-expanded", "false");
     });
+  });
+}
+
+function setupHeroCarousel() {
+  const carousels = Array.from(document.querySelectorAll(".hero-carousel"));
+
+  carousels.forEach((carousel) => {
+    if (carousel.dataset.carouselReady === "true") return;
+
+    const hero = carousel.closest(".hero");
+    const slides = Array.from(carousel.querySelectorAll(".hero-slide"));
+    if (!hero || slides.length < 2) return;
+
+    let dotsWrap = hero.querySelector(".hero-dots");
+    if (!dotsWrap) {
+      dotsWrap = document.createElement("div");
+      dotsWrap.className = "hero-dots";
+      dotsWrap.setAttribute("aria-label", "Selecionar imagem do carrossel");
+      hero.appendChild(dotsWrap);
+    }
+
+    let dots = Array.from(dotsWrap.querySelectorAll(".hero-dot"));
+    if (dots.length !== slides.length) {
+      dotsWrap.innerHTML = slides
+        .map((_, index) => `<button class="hero-dot" type="button" aria-label="Mostrar imagem ${index + 1}" data-slide="${index}"></button>`)
+        .join("");
+      dots = Array.from(dotsWrap.querySelectorAll(".hero-dot"));
+    }
+
+    let activeIndex = slides.findIndex(slide => slide.classList.contains("is-active"));
+    activeIndex = activeIndex >= 0 ? activeIndex : 0;
+
+    const showSlide = (index) => {
+      activeIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === activeIndex);
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeIndex;
+        dot.classList.toggle("is-active", isActive);
+        if (isActive) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const startAutoplay = () => {
+      window.clearInterval(Number(carousel.dataset.intervalId));
+      const intervalId = window.setInterval(() => {
+        showSlide(activeIndex + 1);
+      }, 2000);
+      carousel.dataset.intervalId = String(intervalId);
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        startAutoplay();
+      });
+    });
+
+    carousel.dataset.carouselReady = "true";
+    showSlide(activeIndex);
+    startAutoplay();
   });
 }
 
@@ -115,7 +185,7 @@ function renderBenefitCard(benefit) {
       </div>
       <h3>${benefit.title}</h3>
       <p>${benefit.description}</p>
-      <a class="button button-primary" href="https://wa.me/5586999990000?text=Olá! Quero saber mais sobre ${benefit.title.toLowerCase()}" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+      <a class="button button-primary" href="https://wa.me/5586994901317?text=Olá! Quero saber mais sobre ${benefit.title.toLowerCase()}" target="_blank" rel="noopener noreferrer">Saiba mais</a>
     </article>
   `;
 }

@@ -8,6 +8,7 @@ class HomePage {
   }
 
   async init() {
+    setupHeroCarousel();
     await this.loadProducts();
     await this.loadCategories();
     await this.setupEventListeners();

@@ -83,7 +83,7 @@ const locations = [
     description: "Nossa unidade principal com o acervo mais completo da Flora Tropical.",
     address: "Rua Felipe Neves, 290 - São Benedito, Parnaíba - PI",
     phone: "(86) 3221-1234",
-    whatsapp: "5586999990000",
+    whatsapp: "5586994901317",
     hours: "Seg-Dom: 09h às 22h",
     image: "assets/localizacao.jpg",
     maps: "https://maps.google.com/?q=Parnaíba%20PI"
@@ -94,7 +94,7 @@ const locations = [
     description: "Experiência premium em um ponto pensado para atendimento próximo e prático.",
     address: "Avenida Beira Mar, 456 - Barra Grande - PI",
     phone: "(86) 3284-5678",
-    whatsapp: "5586988888888",
+    whatsapp: "5586994901317",
     hours: "Seg-Dom: 10h às 23h",
     image: "assets/Flora_bg.jpg",
     maps: "https://maps.google.com/?q=Barra%20Grande%20PI"
