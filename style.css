@@ -362,10 +362,10 @@ p {
 
 .hero {
   position: relative;
-  min-height: 720px;
+  min-height: 600px;
   display: grid;
   align-items: end;
-  justify-items: stretch;
+  justify-items: start;
   isolation: isolate;
   overflow: hidden;
   padding: 0 0 112px;
@@ -409,6 +409,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .hero-image {
@@ -442,6 +443,7 @@ p {
 }
 
 .hero-content h1 {
+  font-size:2.2rem;
   color: #fff;
   margin-inline: 0;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.52);
@@ -450,9 +452,9 @@ p {
 .hero-content p {
   max-width: 620px;
   margin: var(--space-4) 0 0;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1.08rem;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.42);
+  color: rgb(255, 255, 255);
+  font-size: 1.09rem;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.808);
 }
 
 .eyebrow,
